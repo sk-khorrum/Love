@@ -1,8 +1,9 @@
 .compare {
   --mask-width: 50%;
   --handle-size: 32px;
+
   position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgb(0 0 0 / 0.05);
 }
 
 .compare__separator {
@@ -91,7 +92,7 @@
   padding: 6px;
   border: 2px solid currentColor;
   border-radius: 50%;
-  background: white;
+  background: rgba(255, 255, 255, 1);
 }
 
 .compare__icon path {
@@ -105,6 +106,7 @@
   --light-green: #2ecc71;
   --blue: #3498db;
   --red: #e74c3c;
+
   --blue-rgb: 52 152 219;
 }
 
@@ -117,7 +119,8 @@
 body {
   padding: 80px 40px;
   background: #e4e4f5;
-  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans", source-sans-pro, sans-serif;
+  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+    source-sans-pro, sans-serif;
 }
 
 a {
@@ -178,7 +181,8 @@ main {
 .compare__image-one,
 .compare__separator {
   will-change: transform;
-  transition: transform 1000ms, outline 1000ms, box-shadow 1000ms, opacity 1000ms;
+  transition: transform 1000ms, outline 1000ms, box-shadow 1000ms,
+    opacity 1000ms;
   transition-timing-function: ease-out;
   outline: 2px solid transparent;
 }
@@ -197,31 +201,38 @@ main {
 
 .debug {
   --step: 120px;
-}
-.debug .compare {
-  transform: scale(0.75) translateY(5%) rotateX(30deg) rotateZ(10deg);
-}
-.debug .compare__image-one {
-  outline-color: var(--red);
-}
-.debug .compare__mask {
-  outline-color: var(--light-green);
-  transform: translateZ(var(--step));
-  box-shadow: 0 calc(var(--step) * 0.66) 5px rgba(0, 0, 0, 0.05);
-}
-.debug .compare__input {
-  opacity: 1;
-  outline-color: var(--blue);
-  transform: translateZ(calc(var(--step) * 2));
-}
-.debug .compare__separator {
-  transform: translateZ(calc(var(--step) * 3));
-}
-.debug .compare__input::-moz-range-thumb {
-  outline-color: var(--blue);
-  background-color: rgb(var(--blue-rgb)/0.1);
-}
-.debug .compare__input::-webkit-slider-thumb {
-  outline-color: var(--blue);
-  background-color: rgb(var(--blue-rgb)/0.1);
+
+  .compare {
+    transform: scale(0.75) translateY(5%) rotateX(30deg) rotateZ(10deg);
+  }
+
+  .compare__image-one {
+    outline-color: var(--red);
+  }
+
+  .compare__mask {
+    outline-color: var(--light-green);
+    transform: translateZ(var(--step));
+    box-shadow: 0 calc(var(--step) * 0.66) 5px rgb(0 0 0 / 0.05);
+  }
+
+  .compare__input {
+    opacity: 1;
+    outline-color: var(--blue);
+    transform: translateZ(calc(var(--step) * 2));
+  }
+
+  .compare__separator {
+    transform: translateZ(calc(var(--step) * 3));
+  }
+
+  .compare__input::-moz-range-thumb {
+    outline-color: var(--blue);
+    background-color: rgb(var(--blue-rgb) / 0.1);
+  }
+
+  .compare__input::-webkit-slider-thumb {
+    outline-color: var(--blue);
+    background-color: rgb(var(--blue-rgb) / 0.1);
+  }
 }
